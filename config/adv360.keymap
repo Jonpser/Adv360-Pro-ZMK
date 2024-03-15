@@ -75,6 +75,20 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
             hold-trigger-on-release;
         };
+
+        left_win_mod: left_win_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_WIN_MOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <8 22 40 54 70 7 8 9 10 11 12 13 21 22 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75 37 38 53 68 69 70>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
     };
 
     macros {
@@ -85,21 +99,21 @@
 
         default_layer {
             bindings = <
-&kp EQUAL       &kp N1           &kp N2           &kp N3             &kp N4               &kp N5  &tog 3                                                 &mo 3      &kp N6  &kp N7                &kp N8              &kp N9            &kp N0            &kp MINUS
-&kp TAB         &kp Q            &navholdL 2 W    &navholdL 1 F      &kp P                &kp B   &none                                                  &none      &kp J   &kp L                 &navholR 1 U        &kp Y             &kp SEMICOLON     &kp BSLH
-&kp ESC         &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_SHIFT S  &hml LEFT_CONTROL T  &kp G   &none     &mo 1    &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp M   &hmr RIGHT_CONTROL N  &hmr RIGHT_SHIFT E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
-&sk LEFT_SHIFT  &kp Z            &kp X            &kp C              &kp D                &kp V                      &kp HOME      &kp PG_UP                        &kp K   &kp H                 &kp COMMA           &kp DOT           &kp FSLH          &kp RSHFT
-&mo 2           &kp GRAVE        &kp CAPS         &kp LEFT           &kp RIGHT                    &kp BSPC  &kp DEL  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP                &kp DOWN            &kp LBKT          &kp RBKT          &mo 2
+&kp EQUAL       &kp N1                    &kp N2           &kp N3             &kp N4               &kp N5  &tog 3                                                 &mo 3      &kp N6  &kp N7                &kp N8              &kp N9            &kp N0            &kp MINUS
+&kp TAB         &kp Q                     &navholdL 2 W    &navholdL 1 F      &kp P                &kp B   &none                                                  &none      &kp J   &kp L                 &navholR 1 U        &kp Y             &kp SEMICOLON     &kp BSLH
+&kp ESC         &left_win_mod LEFT_WIN A  &hml LEFT_ALT R  &hml LEFT_SHIFT S  &hml LEFT_CONTROL T  &kp G   &none     &mo 1    &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp M   &hmr RIGHT_CONTROL N  &hmr RIGHT_SHIFT E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
+&sk LEFT_SHIFT  &kp Z                     &kp X            &kp C              &kp D                &kp V                      &kp HOME      &kp PG_UP                        &kp K   &kp H                 &kp COMMA           &kp DOT           &kp FSLH          &kp RSHFT
+&mo 2           &kp GRAVE                 &kp CAPS         &kp LEFT           &kp RIGHT                    &kp BSPC  &kp DEL  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP                &kp DOWN            &kp LBKT          &kp RBKT          &mo 2
             >;
         };
 
         text-nav {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4          &kp N5  &trans                                                 &mo 3      &trans                 &trans            &trans        &trans             &trans    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp F     &kp R           &kp T   &none                                                  &none      &kp LS(LC(SEMICOLON))  &kp LC(LEFT)      &kp UP        &kp LC(RIGHT)      &trans    &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kt LEFT_SHIFT  &kp G   &none     &mo 1    &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp HOME               &kp LEFT          &kp DOWN      &kp RIGHT          &kp END   &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V           &kp B                      &kp HOME      &kp PG_UP                        &trans                 &kp LS(LC(LEFT))  &kp LC(SEMI)  &kp LS(LC(RIGHT))  &trans    &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT               &kp BSPC  &kp DEL  &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                         &kp UP            &kp DOWN      &kp KP_DOT         &kp RBKT  &mo 2
+&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4          &kp N5  &trans                                                        &mo 3      &trans                 &trans            &trans        &trans             &trans    &kp MINUS
+&kp TAB    &kp Q      &kp W     &kp F     &kp R           &kp T   &none                                                         &none      &kp LS(LC(SEMICOLON))  &kp LC(LEFT)      &kp UP        &kp LC(RIGHT)      &trans    &kp BSLH
+&kp ESC    &kp A      &kp S     &kp D     &kt LEFT_SHIFT  &kp G   &none     &mo 1           &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp HOME               &kp LEFT          &kp DOWN      &kp RIGHT          &kp END   &kp SQT
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V           &kp B                             &kp HOME      &kp PG_UP                        &trans                 &kp LS(LC(LEFT))  &kp LC(SEMI)  &kp LS(LC(RIGHT))  &trans    &kp RSHFT
+&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT               &kp BSPC  &kp LEFT_SHIFT  &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                         &kp UP            &kp DOWN      &kp KP_DOT         &kp RBKT  &mo 2
             >;
         };
 
@@ -115,11 +129,11 @@
 
         realm {
             bindings = <
-&none       &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &tog 0                                                 &trans                  &none  &none       &none       &none  &none  &none
-&none       &none           &kp Q         &kp W         &kp E         &kp R   &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&kp ESCAPE  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F   &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&kp LSHFT   &kp Z           &none         &none         &macro_ver    &none                       &none      &none                                           &none  &none       &none       &none  &none  &none
-&none       &none           &none         &none         &none                 &kp SPACE    &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none       &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &tog 0                                                            &trans                  &none  &none       &none       &none  &none  &none
+&none       &none           &kp Q         &kp W         &kp E         &kp R   &bootloader                                                       &bootloader             &none  &none       &none       &none  &none  &none
+&kp ESCAPE  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F   &none        &none             &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
+&kp LSHFT   &kp Z           &none         &none         &macro_ver    &none                                  &none      &none                                           &none  &none       &none       &none  &none  &none
+&none       &none           &none         &none         &none                 &kp SPACE    &kp LEFT_CONTROL  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
 
