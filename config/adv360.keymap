@@ -129,11 +129,11 @@
 
         realm {
             bindings = <
-&none       &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &tog 0                                                            &trans                  &none  &none       &none       &none  &none  &none
-&none       &none           &kp Q         &kp W         &kp E         &kp R   &bootloader                                                       &bootloader             &none  &none       &none       &none  &none  &none
-&kp ESCAPE  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F   &none        &none             &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&kp LSHFT   &kp Z           &none         &none         &macro_ver    &none                                  &none      &none                                           &none  &none       &none       &none  &none  &none
-&none       &none           &none         &none         &none                 &kp SPACE    &kp LEFT_CONTROL  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none       &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &tog 0                                                                   &trans                  &none  &none       &none       &none  &none  &none
+&kp TAB     &none           &kp Q         &kp W         &kp E         &kp R   &bootloader                                                              &bootloader             &none  &none       &none       &none  &none  &none
+&kp ESCAPE  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F   &none        &none             &kp LEFT_ALT      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
+&kp LSHFT   &kp Z           &none         &none         &macro_ver    &none                                  &none             &none                                           &none  &none       &none       &none  &none  &none
+&none       &none           &none         &none         &none                 &kp SPACE    &kp LEFT_CONTROL  &none             &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
 
